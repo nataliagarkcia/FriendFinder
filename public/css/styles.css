@@ -1,0 +1,69 @@
+#jumbo{
+background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;
+}
+
+
+#logo{
+	font-family: 'Amaranth', sans-serif; 
+	color: white;
+	text-align: center;
+	font-size: 120px;
+	text-shadow: 2px 2px 6px #000000;
+}
+
+#logosmall{
+	font-family: 'Amaranth', sans-serif; 
+	color: #99908b;
+	text-align: center;
+	font-size: 150px;
+
+}
+
+#surveybutton{
+	background-color: white;
+	color:#99908b;
+	font-family: helvetica;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	margin-left: 40%;
+}
+
+#survlogo{
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.subtitle{
+	color:white;
+	font-family: helvetica;
+	text-align: center;
+}
+
+#diamond{
+	color:white;
+}
+.footer{
+	font-family: helvetica;
+}
+#surveyTitle{
+	font-family: helvetica;
+	margin: 0px 0 30px 0 ;
+	font-size: 35px;
+	text-align: center;
+}
+#submit{
+	background-color: #99908b;
+	margin-bottom: 20px;
+
+}
+
+#submit:hover{
+	background-color: #505050;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--css style sheet-->
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<!-- Bootstrap Theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Font Awesome Glyphicons -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<!--font-->
+<link href='https://fonts.googleapis.com/css?family=Amaranth:700' rel='stylesheet' type='text/css'>
+<!--css style sheet-->
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+<style>
+			#jumbo{
+		background:
+		radial-gradient(black 15%, transparent 16%) 0 0,
+		radial-gradient(black 15%, transparent 16%) 8px 8px,
+		radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+		radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+		background-color:#282828;
+		background-size:16px 16px;
+		}
+
+
+		#logo{
+			font-family: 'Amaranth', sans-serif; 
+			color: white;
+			text-align: center;
+			font-size: 120px;
+			text-shadow: 2px 2px 6px #000000;
+		}
+
+		#logosmall{
+			font-family: 'Amaranth', sans-serif; 
+			color: #99908b;
+			text-align: center;
+			font-size: 150px;
+
+		}
+
+		#surveybutton{
+			background-color: white;
+			color:#99908b;
+			font-family: helvetica;
+			margin-top: 30px;
+			margin-bottom: 10px;
+			margin-left: 40%;
+		}
+
+		#survlogo{
+			margin-right: 10px;
+			margin-bottom: 5px;
+			margin-top: 5px;
+		}
+
+		.subtitle{
+			color:white;
+			font-family: helvetica;
+			text-align: center;
+		}
+
+		#diamond{
+			color:white;
+		}
+		.footer{
+			font-family: helvetica;
+		}
+		#surveyTitle{
+			font-family: helvetica;
+			margin: 0px 0 30px 0 ;
+			font-size: 35px;
+			text-align: center;
+		}
+		#submit{
+			background-color: #99908b;
+			margin-bottom: 20px;
+
+		}
+
+		#submit:hover{
+			background-color: #505050;
+		}
+</style>
+
+
+
+	<title>Friend Finder</title>
+</head>
+<body>
+
+	<div class="container">
+		<div class="jumbotron" id="jumbo">
+
+			
+
+  			<h1 id="logo"><i class="fa fa-hashtag" aria-hidden="true"></i>Friend Finder</h1>
+  			
+  			<p class="subtitle">Answer a few basic questions.
+			Then find the friend with the greatest compatibility!</p>
+
+			
+  			<p><a class="btn btn-primary btn-lg" href="/survey" role="button" id="surveybutton"><i class="fa fa-list-alt" aria-hidden="true" id="survlogo"></i>Go to Survey</a></p>
+
+
+		</div>
+
+  		</div>
+  	</div>
+  	<!--footer that will contain the API call to display the friends list and also my git hub-->		
+ <footer class ="footer">
+ 	<div class="container">
+ 		 <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/nataliagarkcia/friendfinder">GitHub Repo</a></p>
+ 	</div>
+ </footer>
+  
+</div>
+
+</body>
+</html>
