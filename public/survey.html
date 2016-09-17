@@ -3,6 +3,8 @@
 <head>
 <!--css style sheet-->
 <link rel="stylesheet" type="text/css" href="css/reset.css">
+<!--jquery-->
+<script src="https://code.jquery.com/jquery.js"></script>
 <!-- Bootstrap Theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery.js"></script>
@@ -16,8 +18,10 @@
 <!--css style sheet-->
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-
+<!--css styles added this this page-->
 <style>
+
+
 			#jumbo{
 		background:
 		radial-gradient(black 15%, transparent 16%) 0 0,
@@ -255,7 +259,113 @@
  		<div class="container">
  		 <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/nataliagarkcia/friendfinder">GitHub Repo</a></p>
  		</div>
- 	</footer><
+ 	</footer>
+
+ 		<!-- Modal -->
+	<div id="resultsModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h2 class="modal-title"><strong>Best Match</strong></h2>
+	      </div>
+	      <div class="modal-body">
+	        <h2 id="matchName"></h2>
+	        <img id="matchImg" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
 
 </body>
+
+<script type="text/javascript">
+
+//Choosen information
+
+	var chosenConf = {
+		//will contain the selection
+	  '.chosen-select'           : {},
+      '.chosen-select-deselect'  : {allow_single_deselect:true},
+      '.chosen-select-no-single' : {disable_search_threshold:10},
+      '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+      '.chosen-select-width'     : {width:"95%"}
+
+       }
+    for (var selector in chosenConf) {
+      $(selector).chosen(chosenConf[selector]);
+    }
+
+	
+	
+//It will obtain the data from the inputs
+ $("#submit").on("click", function(){
+
+
+	//will validate the input of the user
+    	function validateF() {
+		  var isValid = true;
+		  $('.form-control').each(function() {
+		    if ( $(this).val() === '' )
+		        isValid = false;
+		  });
+		  //will validate the chosen from each question
+		  $('.chosen-select').each(function() {
+
+		  	if( $(this).val() === "")
+		  		isValid = false
+		  })
+		  return isValid;
+		}
+
+		// If all required fields are filled
+		if (validateF() == true)
+		{
+ 
+  		//we will create a new object that will contain all the new frinds information
+  		var newFriend = {
+  			name: $("#name").val(),
+  			photo: $("#photo").val(),
+  			scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
+  						}
+
+  		
+
+  					
+
+  			//will grab the url from the location
+	    	var currentURL = window.location.origin;
+
+	    	// will ajax post this new friend data inside the api friends list
+	    	$.post(currentURL + "/api/friends", newFriend, function(data){
+
+	    		// Grab the result from the AJAX post so that the best match's name and photo are displayed.
+	    		$("#matchName").text(data.name);
+	    		$('#matchImg').attr("src", data.photo);
+
+		    	// Show the modal with the best match 
+		    	$("#resultsModal").modal('toggle');
+
+
+		    		});
+		}
+		else
+		{
+			//if the information is not complete it will alert this and not allow to continue till is compleyte
+			alert("Please answer all the questions before submit!");
+		}
+    	
+    	return false;
+    });
+
+
+
+
+</script>
 </html>

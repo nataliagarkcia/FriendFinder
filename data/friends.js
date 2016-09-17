@@ -1,6 +1,6 @@
 
 //this object will hold the information of the survey.
-var friendslist = [{
+var friendsList = [{
                 name: "Richard",
                 photo: "http://stuffnobodycaresabout.com/wp-content/uploads/2016/01/microphely-4-Patrick.png",
                 scores:[
@@ -105,4 +105,4 @@ var friendslist = [{
 
 
 //this will make it posible to export the information inside var friends to be use in other files inside the app
-module.exports = friendslist;
+module.exports = friendsList;
