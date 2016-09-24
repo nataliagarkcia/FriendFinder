@@ -19,8 +19,10 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 // require('../routing/api-routes.js')(app);
 // require('../routing/html-route.js')(app);
-require('./app/routing/api-routes.js')(app);
-require('./app/routing/html-route.js')(app);
+
+
+require(__dirname + '/app/routing/api-routes.js')(app);
+require(__dirname + '/app/routing/html-route.js')(app);
 
 //this code will start our server
 
