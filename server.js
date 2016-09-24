@@ -20,21 +20,9 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 // require('../routing/api-routes.js')(app);
 // require('../routing/html-route.js')(app);
 
-	app.get('/home', function(req, res){
-		res.sendFile(path.join(__dirname + '/../public/home.html'));
-	});
 
-	app.get('/survey', function(req, res){
-		res.sendFile(path.join(__dirname + '/../public/survey.html'));
-	});
-
-	//if doesn't have a match will return home
-	app.use(function(req, res){
-		res.sendFile(path.join(__dirname + '/../public/home.html'));
-	});
-
-require(__dirname + '/app/routing/api-routes.js')(app);
-//require(__dirname + '/app/routing/html-route.js')(app);
+require('./app/routing/api-routes.js')(app);
+require('./app/routing/html-route.js')(app);
 
 //this code will start our server
 
